@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fire Detection and Alert System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 10px 0;
+            padding: 5px;
+            width: 100%;
+        }
+
+        button[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            color: #333;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fire Detection and Alert System</h1>
+    
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <label for="file">Upload Video:</label>
+        <input type="file" name="file" id="file" accept=".mp4">
+        <br><br>
+        <button type="submit" name="upload">Upload</button>
+    </form>
+    
+    <br><br>
+    <form action="/" method="POST">
+        <button type="submit" name="detect">Detect</button>
+    </form>
+    
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>
